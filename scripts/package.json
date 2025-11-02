@@ -1,0 +1,14 @@
+{
+  "name": "migration-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "migrate": "node migrate-database.js",
+    "migrate-manual": "echo '请手动在 Supabase SQL Editor 中运行 migrate-to-supabase.sql'",
+    "validate": "node -e \"import('./migrate-database.js').then(m => m.validateMigration())\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "dotenv": "^16.4.5"
+  }
+}
